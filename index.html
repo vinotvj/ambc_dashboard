@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>dashboard</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+        <link rel="stylesheet" type="text/css" href="css/style.css" />
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" />
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    </head>
+    <body>
+        <div class="header float-start w-100 px-2 px-lg-5 py-2">
+            <div class="logo">
+                <a href="#"><img src="images/logo.png" alt="logo" /></a>
+            </div>
+
+            <div class="header_right d-flex pt-2">
+                <div class="help">
+                    <div class="dropdown">
+                        <button class="btn bg-white dropdown-toggle text-info poppins-600" type="button" id="help" data-bs-toggle="dropdown" aria-expanded="false">
+                            Help
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="help">
+                            <li><a class="dropdown-item" href="#">Help center</a></li>
+                            <li><a class="dropdown-item" href="#">Setting</a></li>
+                            <li><a class="dropdown-item" href="#">Sign out</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="user_login">
+                    <div class="dropdown">
+                        <button class="btn bg-white dropdown-toggle poppins-600" type="button" id="userlogin" data-bs-toggle="dropdown" aria-expanded="false">
+                            <span class="first_let bg-info text-white p-2 rounded-circle inline-block mx-1">AH</span> <span class="user_name">Admin_HRMS</span>
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="userlogin">
+                            <li><a class="dropdown-item" href="#">Profile</a></li>
+                            <li><a class="dropdown-item" href="#">Setting</a></li>
+                            <li><a class="dropdown-item" href="#">Sign out</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <button
+                    class="btn navbar-toggler navbar-toggler-humburger-icon hover-bg-transparent collapsed menu_icon"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#navbarVerticalCollapse"
+                    aria-controls="navbarVerticalCollapse"
+                    aria-expanded="false"
+                    aria-label="Toggle Navigation"
+                >
+                    <span class="navbar-toggle-icon"><span class="bi bi-list"></span></span>
+                </button>
+            </div>
+        </div>
+        <div class="row m-0 float-left w-100 admin_section">
+            <div class="col-sm-2 sidebar bg-light border-end mt-1">
+                <nav class="navbar navbar-vertical navbar-expand-lg p-0">
+                    <div class="collapse navbar-collapse" id="navbarVerticalCollapse">
+                        <ul class="left_menu w-100 p-0 py-3 m-0">
+                            <li class="py- my-1">
+                                <a class="nav-link dropdown-indicator text-dark" href="#">
+                                    <span class="inline-block mx-2"><i class="bi bi-columns-gap"></i></span> Dashboard
+                                </a>
+                            </li>
+                            <li class="py-2 my-1">
+                                <a class="nav-link dropdown-indicator text-dark" href="#">
+                                    <span class="inline-block mx-2"><i class="bi bi-people"></i></span>Employee
+                                </a>
+                            </li>
+                            <li class="py-2 my-1">
+                                <a class="nav-link dropdown-indicator text-dark" href="#">
+                                    <span class="inline-block mx-2"><i class="bi bi-calendar4-week"></i></span>Attendance
+                                </a>
+                            </li>
+                            <li class="py-2 my-1 active">
+                                <a class="nav-link dropdown-indicator text-dark" href="#">
+                                    <span class="inline-block mx-2"><i class="bi bi-box-arrow-in-right"></i></span>Leave
+                                </a>
+                            </li>
+                            <li class="py-2 my-1">
+                                <a class="nav-link dropdown-indicator text-dark" href="#">
+                                    <span class="inline-block mx-2"><i class="bi bi-laptop"></i></span>Ticketing
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+            <div class="col-sm-10 content lg:mb-5 pb-5 bg-white mt-1">
+                <div class="row align-items-center m-0 right_heder py-3 px-lg-2">
+                    <div class="col-lg-3 header_title float-left p-0 my-1">
+                        <h1 class="m-lg-0 fs-4">Leave</h1>
+                    </div>
+                    <div class="col-lg-4 header_search p-0 my-1">
+                        <div class="input-group">
+                            <div class="form-outline d-flex col-12 col-lg-10 lg:mx-auto border search_box p-1" data-mdb-input-init>
+                                <button type="button" class="btn border-end fs-5" data-mdb-ripple-init>
+                                    <i class="bi bi-search text-success"></i>
+                                </button>
+                                <input type="search" id="form1" placeholder="Search Employee" class="form-control rounded-0 bg-transparent border-0" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-5 row m-0 align-items-center right_list p-0">
+                        <div class="col-lg-4 location my-1">
+                            <select class="form-select form-select-lg border-0" aria-label=".form-select-lg example">
+                                <option selected>Location</option>
+                                <option value="1">Chennai</option>
+                                <option value="2">Madurai</option>
+                                <option value="3">Delhi</option>
+                            </select>
+                        </div>
+                        <div class="col-lg-4 export my-1">
+                            <select class="form-select form-select-lg border-0" aria-label=".form-select-lg example">
+                                <option selected>Export</option>
+                                <option value="1">demo</option>
+                                <option value="2">demo</option>
+                                <option value="3">demo</option>
+                            </select>
+                        </div>
+                        <div class="col-lg-4 p-0 leave">
+                            <button type="button" class="btn w-100 button-blue text-white poppins-600 fs-5 py-2.5 px-3 rounded-0">Leave Policy</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-12 d-lg-flex align-items-center datepicker1">
+                    <div class="month_picker d-flex align-items-center justify-content-center">
+                        <label class="cal_icon" for="monthPicker"><i class="bi bi-calendar4-week"></i></label>
+                        <select id="monthPicker">
+                            <option value="0">January</option>
+                            <option value="1">February</option>
+                            <option value="2">March</option>
+                            <option value="3">April</option>
+                            <option value="4">May</option>
+                            <option value="5">June</option>
+                            <option value="6">July</option>
+                            <option value="7">August</option>
+                            <option value="8">September</option>
+                            <option value="9">October</option>
+                            <option value="10">November</option>
+                            <option value="11">December</option>
+                        </select>
+                    </div>
+                    <div id="calendar"></div>
+                </div>
+
+                <div class="row m-0">
+                    <div class="table-responsive">
+                        <table class="leave_detail">
+                            <tbody>
+                                <tr class="border-bottom d-block py-3">
+                                    <td class="px-2">1000</td>
+                                    <td class="px-2">
+                                        <div class="user_detail d-flex align-items-center">
+                                            <span class="user_image inline-block float-start"><img class="rounded-circle inline-block" src="images/user1.jpg" alt="userimage" /></span>
+                                            <div class="user_info float-start px-3">
+                                                <p class="m-0">Jhone Doe</p>
+                                                <a class="text-decoration-none" href="mailto:john.deo@example.com">john.deo@example.com</a>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="px-2">
+                                        <div class="alighn-items-center">
+                                            <div class="px-0 date_info">
+                                                <p class="m-0 poppins-600">29 April 2024</p>
+                                                <p class="m-0 text-gray poppins-600">Mon</p>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="px-2">
+                                        <div class="alighn-items-center">
+                                            <div class="px-2">
+                                                <p class="m-0 text-gray poppins-600">Day(s)</p>
+                                                <p class="m-0 poppins-600">1</p>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="px-2">
+                                        <div class="alighn-items-center">
+                                            <div class="px-2">
+                                                <p class="m-0 poppins-600 text-gray">Leave Type</p>
+                                                <p class="m-0 poppins-bold">Emergecy Leave</p>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="px-2">
+                                        <div class="alighn-items-center">
+                                            <div class="px-2">
+                                                <p class="m-0 text-gray poppins-600">Location</p>
+                                                <p class="m-0 poppins-bold">Madurai</p>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="px-2">
+                                        <div class="user_detail d-flex alighn-items-center">
+                                            <span class="inline-block text-gray"><i class="bi bi-chat-right-fill"></i></span>
+                                            <div class="leave_info px-3">
+                                                <p class="m-0 text-14">I am Writting to request a one-days sick leav as I am suffering form mild fever and fatigue</p>
+                                            </div>
+                                        </div>
+                                        <div class="approve_btn text-end mt-2">
+                                            <button type="button" class="btn border-success px-3 text-success rounded-pill m-1">Approve</button>
+                                            <button type="button" class="btn border-danger px-3 text-danger rounded-pill m-1">Reject</button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr class="border-bottom d-block py-3">
+                                    <td class="px-2">1001</td>
+                                    <td class="px-2">
+                                        <div class="user_detail d-flex align-items-center">
+                                            <span class="user_image inline-block float-start"><img class="rounded-circle inline-block" src="images/user1.jpg" alt="userimage" /></span>
+                                            <div class="user_info float-start px-3">
+                                                <p class="m-0">Jane smith</p>
+                                                <a class="text-decoration-none" href="mailto:jane.smith@example.com">jane.smith@example.com</a>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="px-2">
+                                        <div class="alighn-items-center">
+                                            <div class="px-0 date_info">
+                                                <p class="m-0 poppins-600">29 April 2024 to 01 May 2024</p>
+                                                <p class="m-0 text-gray poppins-600">Mon</p>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="px-2">
+                                        <div class="alighn-items-center">
+                                            <div class="px-2">
+                                                <p class="m-0 text-gray poppins-600">Day(s)</p>
+                                                <p class="m-0 poppins-600">3</p>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="px-2">
+                                        <div class="d-flex alighn-items-center">
+                                            <div class="px-2">
+                                                <p class="m-0 poppins-600 text-gray">Leave Type</p>
+                                                <p class="m-0 poppins-bold">Emergecy Leave</p>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="px-2">
+                                        <div class="alighn-items-center">
+                                            <div class="px-2">
+                                                <p class="m-0 text-gray poppins-600">Location</p>
+                                                <p class="m-0 poppins-bold">Madurai</p>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="px-2">
+                                        <div class="user_detail d-flex alighn-items-center">
+                                            <span class="inline-block text-gray"><i class="bi bi-chat-right-fill"></i></span>
+                                            <div class="leave_info px-3">
+                                                <p class="m-0 text-14">Need to attend wedding ceremony cousin in out of station</p>
+                                            </div>
+                                        </div>
+                                        <div class="approve_btn text-end mt-3">
+                                            <button type="button" class="btn border-success px-3 text-success rounded-pill mx-2">Approve</button>
+                                            <button type="button" class="btn border-danger px-3 text-danger rounded-pill">Reject</button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr class="border-bottom d-block py-3">
+                                    <td class="px-2">1003</td>
+                                    <td class="px-2">
+                                        <div class="user_detail d-flex align-items-center">
+                                            <span class="user_image inline-block float-start"><img class="rounded-circle inline-block" src="images/user1.jpg" alt="userimage" /></span>
+                                            <div class="user_info float-start px-3">
+                                                <p class="m-0">Jhone Doe</p>
+                                                <a class="text-decoration-none" href="mailto:john.deo@example.com">john.deo@example.com</a>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="px-2">
+                                        <div class="alighn-items-center">
+                                            <div class="px-0 date_info">
+                                                <p class="m-0 poppins-600">29 April 2024</p>
+                                                <p class="m-0 text-gray poppins-600">Mon</p>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="px-2">
+                                        <div class="alighn-items-center">
+                                            <div class="px-2">
+                                                <p class="m-0 text-gray poppins-600">Day(s)</p>
+                                                <p class="m-0 poppins-600">1</p>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="px-2">
+                                        <div class="alighn-items-center">
+                                            <div class="px-2">
+                                                <p class="m-0 poppins-600 text-gray">Leave Type</p>
+                                                <p class="m-0 poppins-bold">Emergecy Leave</p>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="px-2">
+                                        <div class="alighn-items-center">
+                                            <div class="px-2">
+                                                <p class="m-0 text-gray poppins-600">Location</p>
+                                                <p class="m-0 poppins-bold">Madurai</p>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="px-2">
+                                        <div class="user_detail d-flex alighn-items-center">
+                                            <span class="inline-block text-gray"><i class="bi bi-chat-right-fill"></i></span>
+                                            <div class="leave_info px-3">
+                                                <p class="m-0 text-14">I am Writting to request a one-days sick leav as I am suffering form mild fever and fatigue</p>
+                                            </div>
+                                        </div>
+                                        <div class="approve_btn text-end mt-2">
+                                            <button type="button" class="btn border-success px-3 text-success rounded-pill m-1">Approve</button>
+                                            <button type="button" class="btn border-danger px-3 text-danger rounded-pill m-1">Reject</button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr class="border-bottom d-block py-3">
+                                    <td class="px-2">1004</td>
+                                    <td class="px-2">
+                                        <div class="user_detail d-flex align-items-center">
+                                            <span class="user_image inline-block float-start"><img class="rounded-circle inline-block" src="images/user1.jpg" alt="userimage" /></span>
+                                            <div class="user_info float-start px-3">
+                                                <p class="m-0">Jane smith</p>
+                                                <a class="text-decoration-none" href="mailto:jane.smith@example.com">jane.smith@example.com</a>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="px-2">
+                                        <div class="alighn-items-center">
+                                            <div class="px-0 date_info">
+                                                <p class="m-0 poppins-600">29 April 2024 to 01 May 2024</p>
+                                                <p class="m-0 text-gray poppins-600">Mon</p>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="px-2">
+                                        <div class="alighn-items-center">
+                                            <div class="px-2">
+                                                <p class="m-0 text-gray poppins-600">Day(s)</p>
+                                                <p class="m-0 poppins-600">3</p>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="px-2">
+                                        <div class="d-flex alighn-items-center">
+                                            <div class="px-2">
+                                                <p class="m-0 poppins-600 text-gray">Leave Type</p>
+                                                <p class="m-0 poppins-bold">Emergecy Leave</p>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="px-2">
+                                        <div class="alighn-items-center">
+                                            <div class="px-2">
+                                                <p class="m-0 text-gray poppins-600">Location</p>
+                                                <p class="m-0 poppins-bold">Madurai</p>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="px-2">
+                                        <div class="user_detail d-flex alighn-items-center">
+                                            <span class="inline-block text-gray"><i class="bi bi-chat-right-fill"></i></span>
+                                            <div class="leave_info px-3">
+                                                <p class="m-0 text-14">Need to attend wedding ceremony cousin in out of station</p>
+                                            </div>
+                                        </div>
+                                        <div class="approve_btn text-end mt-3">
+                                            <button type="button" class="btn border-success px-3 text-success rounded-pill mx-2">Approve</button>
+                                            <button type="button" class="btn border-danger px-3 text-danger rounded-pill">Reject</button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr class="border-bottom d-block py-3">
+                                    <td class="px-2">1005</td>
+                                    <td class="px-2">
+                                        <div class="user_detail d-flex align-items-center">
+                                            <span class="user_image inline-block float-start"><img class="rounded-circle inline-block" src="images/user1.jpg" alt="userimage" /></span>
+                                            <div class="user_info float-start px-3">
+                                                <p class="m-0">Jane smith</p>
+                                                <a class="text-decoration-none" href="mailto:jane.smith@example.com">jane.smith@example.com</a>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="px-2">
+                                        <div class="alighn-items-center">
+                                            <div class="px-0 date_info">
+                                                <p class="m-0 poppins-600">29 April 2024 to 01 May 2024</p>
+                                                <p class="m-0 text-gray poppins-600">Mon</p>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="px-2">
+                                        <div class="alighn-items-center">
+                                            <div class="px-2">
+                                                <p class="m-0 text-gray poppins-600">Day(s)</p>
+                                                <p class="m-0 poppins-600">3</p>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="px-2">
+                                        <div class="d-flex alighn-items-center">
+                                            <div class="px-2">
+                                                <p class="m-0 poppins-600 text-gray">Leave Type</p>
+                                                <p class="m-0 poppins-bold">Emergecy Leave</p>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="px-2">
+                                        <div class="alighn-items-center">
+                                            <div class="px-2">
+                                                <p class="m-0 text-gray poppins-600">Location</p>
+                                                <p class="m-0 poppins-bold">Madurai</p>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="px-2">
+                                        <div class="user_detail d-flex alighn-items-center">
+                                            <span class="inline-block text-gray"><i class="bi bi-chat-right-fill"></i></span>
+                                            <div class="leave_info px-3">
+                                                <p class="m-0 text-14">Need to attend wedding ceremony cousin in out of station</p>
+                                            </div>
+                                        </div>
+                                        <div class="approve_btn text-end mt-3">
+                                            <button type="button" class="btn border-success px-3 text-success rounded-pill mx-2">Approve</button>
+                                            <button type="button" class="btn border-danger px-3 text-danger rounded-pill">Reject</button>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+
+    <script>
+        var selectedDate = null;
+        var currentMonth = new Date().getMonth();
+        document.getElementById("monthPicker").value = currentMonth.toString();
+        // Function to display the calendar for the selected month
+        function displayCalendar() {
+            var monthPicker = document.getElementById("monthPicker");
+            var selectedMonth = parseInt(monthPicker.value); // Get the selected month index
+            var year = new Date().getFullYear(); // Get the current year
+            var daysInMonth = new Date(year, selectedMonth + 1, 0).getDate(); // Get the total days in the selected month
+
+            var calendarDiv = document.getElementById("calendar");
+            var calendarHTML = "";
+
+            // Loop through each day of the month
+            for (var i = 1; i <= daysInMonth; i++) {
+                calendarHTML += "<button class='active_date bg-white border-0 day' onclick='selectDate(this)'>" + i + "</button>";
+            }
+
+            calendarDiv.innerHTML = calendarHTML;
+        }
+
+        // Function to handle the date selection
+        function selectDate(element) {
+            if (selectedDate) {
+                selectedDate.classList.remove("active");
+            }
+            selectedDate = element;
+            selectedDate.classList.add("active");
+        }
+
+        // Call the function initially to display the calendar for the current month
+        displayCalendar();
+
+        // Add event listener to the month picker to update the calendar when a month is selected
+        document.getElementById("monthPicker").addEventListener("change", displayCalendar);
+
+        //left-active class
+        $(document).ready(function () {
+            $(".left_menu li").click(function () {
+                $(".left_menu li").removeClass("active");
+                $(this).addClass("active");
+                var itemText = $(this).text();
+            });
+        });
+		
+    </script>
+</html>

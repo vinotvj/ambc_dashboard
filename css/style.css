@@ -1,0 +1,221 @@
+body {
+    margin: 0;
+    font-family: Poppins-Regular;
+}
+img {
+    max-width: 100%;
+}
+ a{
+    color: #00b4f2;
+ }
+.btn:focus {
+    outline: none;
+    box-shadow: none;
+}
+.form-select:focus {
+    outline: none;
+    box-shadow: none;
+}
+.form-control:focus {
+    box-shadow: none;
+}
+.text-gray {
+    color: #b6b6b6;
+}
+.text-success {
+    color: #0fcd92 !important;
+}
+.text-danger {
+    color: #f8284a !important;
+}
+.border-danger {
+    border-color: #f8284a !important;
+}
+.border-success {
+    border-color: #0fcd92 !important;
+}
+.bg-info {
+    background-color: #00b4f2 !important;
+}
+.text-14 {
+    font-size: 14px;
+}
+select {
+    cursor: pointer;
+}
+.dropdown-toggle::after {
+    color: #0dcaf0;
+}
+@font-face {
+    font-family: Poppins-Bold;
+    src: url(../fonts/Poppins-Bold.eot);
+    src: url(../fonts/Poppins-Bold.eot?#iefix) format("embedded-opentype"), url(../fonts/Poppins-Bold.woff2) format("woff2"), url(../fonts/Poppins-Bold.woff) format("woff"), url(../fonts/Poppins-Bold.ttf) format("truetype"),
+        url(../fonts/Poppins-Bold.svg#Poppins-Bold) format("svg");
+}
+@font-face {
+    font-family: Poppins-Medium;
+    src: url(../fonts/Poppins-Medium.eot);
+    src: url(../fonts/Poppins-Medium.eot?#iefix) format("embedded-opentype"), url(../fonts/Poppins-Medium.woff2) format("woff2"), url(../fonts/Poppins-Medium.woff) format("woff"), url(../fonts/Poppins-Medium.ttf) format("truetype"),
+        url(../fonts/Poppins-Medium.svg#Poppins-Medium) format("svg");
+}
+@font-face {
+    font-family: Poppins-Regular;
+    src: url(../fonts/Poppins-Regular.eot);
+    src: url(../fonts/Poppins-Regular.eot?#iefix) format("embedded-opentype"), url(../fonts/Poppins-Regular.woff2) format("woff2"), url(../fonts/Poppins-Regular.woff) format("woff"), url(../fonts/Poppins-Regular.ttf) format("truetype"),
+        url(../fonts/Poppins-Regular.svg#Poppins-Regular) format("svg");
+}
+.poppins-400 {
+    font-family: Poppins-Regular;
+}
+.poppins-600 {
+    font-family: Poppins-Medium;
+}
+.poppins-bold {
+    font-family: Poppins-Bold;
+}
+nav.navbar li {
+    list-style-type: none;
+}
+.header {
+    box-shadow: 0 4px 2px -2px rgba(0, 0, 0, 0.2);
+    background-color: #fff;
+}
+.logo img {
+    max-width: 140px;
+    height: auto;
+}
+.logo {
+    float: left;
+}
+.header_right {
+    float: right;
+    width: 21%;
+}
+.help {
+    float: left;
+}
+.user_login {
+    float: right;
+}
+.content {
+}
+.navbar a {
+    font-size: 18px;
+}
+.navbar span {
+    font-size: 20px;
+    vertical-align: middle;
+    width: 25px;
+    display: inline-block;
+}
+.navbar li.active a {
+    background-color: #eef4ff;
+    border-radius: 5px;
+}
+.search_box {
+    border-radius: 16px;
+}
+.button-blue {
+    background-color: #3e78cf;
+}
+.approve_btn button {
+    min-width: 105px;
+    height: 35px;
+}
+.leave_detail td {
+    font-size: 13px;
+    min-width: 125px;
+    vertical-align: sub;
+}
+.user_image {
+    width: 50px;
+    display: inline-block;
+}
+#form1::placeholder {
+    color: #b6b6b6;
+}
+.date_info {
+    width: 125px;
+}
+.button-blue:hover {
+    background-color: #00b4f2;
+    transition: 0.5s;
+}
+.nav-link:focus,
+.nav-link:hover {
+    color: #00b4f2 !important;
+}
+.active_date {
+    width: 34px;
+    height: 34px;
+    border: 1px solid #fff !important;
+    border-radius: 5px;
+}
+.active_date.active {
+    background-color: #eef4ff !important;
+    border-color: #349af9 !important;
+}
+.month_picker {
+    height: 44px;
+    text-align: center;
+    background-color: #eef4ff;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    position: relative;
+    width: 155px;
+}
+select#monthPicker {
+    appearance: none;
+    border: 0;
+    background-color: #eef4ff;
+    text-align: center;
+    outline: none;
+    width: 100%;
+    border-radius: 20px;
+    font-family: "Poppins-Medium";
+}
+select#monthPicker option {
+    font-family: "Poppins-Regular";
+}
+.cal_icon {
+    float: left;
+    display: inline-block;
+    position: absolute;
+    left: 15px;
+    color: #349af9;
+}
+/*****mediaquery******/
+@media (min-width: 992px) {
+    .menu_icon {
+        display: none;
+    }
+}
+@media (max-width: 992px) {
+    .location {
+        border: 1px solid #ccc;
+        border-radius: 10px;
+    }
+    .export {
+        border: 1px solid #ccc;
+        margin-bottom: 10px !important;
+        border-radius: 10px;
+    }
+    .logo img {
+        max-width: 100px;
+    }
+    .logo {
+        padding-top: 4px;
+    }
+    .header_right {
+        width: auto;
+    }
+    .form-select {
+        font-size: 14px;
+    }
+    .leave_info {
+        width: 250px;
+    }
+    .user_name {
+        display: none;
+    }
+}
