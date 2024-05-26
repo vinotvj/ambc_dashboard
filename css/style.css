@@ -184,13 +184,30 @@ select#monthPicker option {
     left: 15px;
     color: #349af9;
 }
+
 /*****mediaquery******/
+
 @media (min-width: 992px) {
     .menu_icon {
         display: none;
     }
 }
+@media (max-width: 1300px){
+	.button-blue {
+    font-size: 13px !important;
+}
+.active_date {
+    font-size: 13px;
+    width: 30px;
+    height: 30px;
+}
+.leave_info {
+    width: 270px;
+}
+}
+
 @media (max-width: 992px) {
+	
     .location {
         border: 1px solid #ccc;
         border-radius: 10px;
